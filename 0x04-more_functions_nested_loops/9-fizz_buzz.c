@@ -3,6 +3,7 @@
  * main - Entry point
  * Description: Fizz Buzz
  * Return: void
+ *
  */
 int main(void)
 {
