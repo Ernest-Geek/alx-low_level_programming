@@ -3,18 +3,12 @@
  * _isupper - uppercase letters
  * @c: char to check
  * Return: 0 or 1
- */
+ **/
 int _isupper(int c)
 {
-char uppercase = 'A';
-int isupper = 0;
-for (; uppercase <= 'z'; uppercase++)
-{
-if (c == uppercase)
-{
-isupper = 1;
-break;
+if (c >= 'A' && c <= 'Z')
+return (1);
+else
+return (0);
 }
-}
-return (isupper);
-}
+
