@@ -23,5 +23,5 @@ while (*s >= '0' && *s <= '9')
 ans = ans * 10 + (*s - '0');
 s++;
 }
-return (sign * ans);
+return (sign *ans);
 }
