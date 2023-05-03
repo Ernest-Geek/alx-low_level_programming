@@ -11,7 +11,7 @@ int pop_listint(listint_t **head)
 listint_t *current;
 int data;
 /* Checks if head is empty */
-if (*head != NULL)
+if (!*head)
 {
 return (0);
 }
