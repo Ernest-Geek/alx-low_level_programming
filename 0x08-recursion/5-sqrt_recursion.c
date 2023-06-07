@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * _sqrt_recursion - Entry point
+ * _sqrt - Entry point
  * Description: Natural square root
  * @y: Integer
  * @z: integer
