@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
+/**
+ * init_dog - Entry point
+ * Code description: A function that initializes a variable
+ * @d - pointer to the struct type
+ * @name: name of the dog
+ * @owner: owner of the dog
+ * @age: age of the dog
+ **/
+ void init_dog(struct dog *d, char *name, float age, char *owner)
+{
+/**Checking if the null pointer is equal to null**/
+if (!d)
+{
+/**Assigning each values the element**/
+d->name = name;
+d->age = age;
+d->owner = owner;
+}
+}
+
