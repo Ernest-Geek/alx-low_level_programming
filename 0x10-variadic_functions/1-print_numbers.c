@@ -12,14 +12,14 @@ unsigned int x;
 va_start(ap, n);
 for (x = 0; x < n; x++)
 {
-printf("%d\n", va_arg(ap, int));
+printf("%d", va_arg(ap, int));
 /**check if the separator is null and its not the last argument**/
 if (separator != NULL && x != (n - 1))
 {
 printf("%s", separator);
 }
-printf("\n");
 /**free a va_list**/
-va_end(ap);
 }
+printf("\n");
+va_end(ap);
 }
