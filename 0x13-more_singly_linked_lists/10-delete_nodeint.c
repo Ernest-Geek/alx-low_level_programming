@@ -1,31 +1,40 @@
 #include "lists.h"
 /**
- * reverse_listint - Entry point
- * Description: Reverses a listint_t linked list.
- * @head: Pointer to pointer of first node in the linked list
+ * delete_nodeint_at_index - Entry point
+ * Description: Deletes the node at index index of a listint_t linked list.
+ * @head: Pointer to pointer of first node in linked list
+ * @index: Index of the node that should be deleted.
  *
- * Return: A pointer to the first node of the reversed list
+ * Return: 1 if it succeeded, -1 if it failed
  */
-listint_t *reverse_listint(listint_t **head)
+int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *top = NULL;
-listint_t *bottom;
-if (!head || !*head)
+listint_t *temp, *current;
+unsigned int i;
+/* Where i is the node */
+/* Checks if head is empty */
+if (!(*head))
+return (-1);
+if (index == 0)
 {
-return (NULL);
+temp = *head;
+*head = (*head)->next;
+free(temp);
+return (1);
 }
-while (*head)
+/* Checks node before it get removed */
+current = *head;
+for (i = 0; i < (index - 1); i++)
 {
-/* Saves next node */
-bottom = (*head)->next;
-/* Reverses pointer direction */
-(*head)->next = top;
-/* Moves the top node to the current node */
-top = *head;
-/* Moves head node to the next node */
-*head = bottom;
+/* Checks if index is out of range */
+if (!current->next)
+return (-1);
+current = current->next;
 }
-/* Then sets head to the last node(top) */
-head = top;
-return (*head);
+/* Delete the node at index */
+temp = current->next;
+current->next = temp->next;
+free(temp);
+/* Success */
+return (1);
 }
